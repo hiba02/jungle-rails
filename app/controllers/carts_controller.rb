@@ -1,12 +1,19 @@
 class CartsController < ApplicationController
-
+  # puts "SEE:   #{@enhanced_cart}"
   def show
+    # puts @enhanced_cart.is_a
+    if @enhanced_cart
+      render 'show'
+    else
+      render 'noItem'
+    end
+
   end
 
   def add_item
     product_id = params[:product_id].to_s
     modify_cart_delta(product_id, +1)
-
+    
     redirect_to :back
   end
 
