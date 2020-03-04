@@ -1,13 +1,14 @@
 class CartsController < ApplicationController
-  # puts "SEE:   #{@enhanced_cart}"
+ 
   def show
-    # puts @enhanced_cart.is_a
-    if @enhanced_cart
+    puts "hey"
+    if enhanced_cart != []
       render 'show'
     else
       render 'noItem'
     end
 
+    puts "enhanced_cart: #{enhanced_cart}"
   end
 
   def add_item
