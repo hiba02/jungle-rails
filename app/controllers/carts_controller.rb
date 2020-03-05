@@ -1,7 +1,7 @@
 class CartsController < ApplicationController
  
   def show
-    puts "hey"
+    # puts "hey"
     if enhanced_cart != []
       render 'show'
     else

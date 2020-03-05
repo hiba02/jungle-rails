@@ -2,6 +2,23 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
+
+    # LineItem - matched with order id (see db/schema.rb)
+    @line_items = LineItem.where("order_id = ?", params[:id])
+    
+    # empty array
+    @products = []
+
+    # line_items: [{}, {}, {} ...]
+    @line_items.each do |item|
+      # Product - matched with item.product_id
+      product = Product.find(item.product_id)
+      # update Product's quantity into LineItem(order)'s quantity
+      product.quantity = item.quantity
+      # push to empty array products
+      @products.push(product)
+    end
+    
   end
 
   def create
