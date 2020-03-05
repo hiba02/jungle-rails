@@ -1,4 +1,8 @@
 class Admin::ProductsController < ApplicationController
+  before_filter :authenticate
+
+  # USER_ID = "Jungle"
+  # PASSWORD = "book"
 
   def index
     @products = Product.order(id: :desc).all
@@ -35,6 +39,13 @@ class Admin::ProductsController < ApplicationController
       :image,
       :price
     )
+  end
+
+  private
+  def authenticate
+     authenticate_or_request_with_http_basic do |id, password| 
+        id == Rails.configuration.stripe[:user_id] && password == Rails.configuration.stripe[:password]
+     end
   end
 
 end
