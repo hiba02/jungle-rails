@@ -61,3 +61,9 @@ group :production do
   gem 'newrelic_rpm'
   gem 'rails_12factor'
 end
+
+group :test do
+  gem 'shoulda-matchers'
+end
+
+gem "auto_strip_attributes", "~> 2.2"
