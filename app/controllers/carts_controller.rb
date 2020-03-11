@@ -3,14 +3,14 @@ class CartsController < ApplicationController
   before_filter :authorize
 
   def show
-    # puts "hey"
+    
     if enhanced_cart != []
       render 'show'
     else
       render 'noItem'
     end
 
-    puts "enhanced_cart: #{enhanced_cart}"
+    
   end
 
   def add_item
