@@ -20,6 +20,13 @@ Use Credit Card # 4111 1111 1111 1111 for testing success scenarios.
 
 More information in their docs: <https://stripe.com/docs/testing#cards>
 
+
+## Final Product
+!["screenshot of jungle-rails"](https://github.com/hiba02/tweeter/blob/master/docs/tweet-destop.png?raw=true)
+
+!["screenshot of jungle-rails"](https://github.com/hiba02/tweeter/blob/master/docs/tweet-mobile.png?raw=true)
+
+
 ## Dependencies
 
 * Rails 4.2 [Rails Guide](http://guides.rubyonrails.org/v4.2/)
