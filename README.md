@@ -1,6 +1,6 @@
 # Jungle
 
-A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
+A mini e-commerce application built with Rails 4.2 for purposes of learning Rails by example.
 
 
 ## Setup
@@ -22,9 +22,9 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 
 
 ## Final Product
-!["screenshot of jungle-rails"](https://github.com/hiba02/tweeter/blob/master/docs/tweet-destop.png?raw=true)
+!["screenshot of jungle-rails"](https://github.com/hiba02/jungle-rails/blob/master/doc/jungle1.png)
 
-!["screenshot of jungle-rails"](https://github.com/hiba02/tweeter/blob/master/docs/tweet-mobile.png?raw=true)
+!["screenshot of jungle-rails"](https://github.com/hiba02/jungle-rails/blob/master/doc/jungle2.png)
 
 
 ## Dependencies
