@@ -37,19 +37,17 @@ RSpec.describe User, type: :model do
   end
 
   it "validation of a few spaces before and/or after their email address" do 
-    @user2 = User.new(name:"a2",email:"   a2@a.com   ",password:"111", password_confirmation:"111")
+    User.new(name:"a2",email:"   a2@a.com   ",password:"111", password_confirmation:"111").save
+    @user2 = User.authenticate_with_credentials(" a2@a.com ", "111")
     email = @user2.email
     expect(email).to eq("a2@a.com")
   end
 
   it "validation of allowing uppercase email address" do 
-    @user2 = User.new(name:"a3",email:"   A2@A.com   ",password:"111", password_confirmation:"111")
+    @user3 = User.new(name:"a3",email:"   A2@A.com   ",password:"111", password_confirmation:"111").save
+    @user2 = User.authenticate_with_credentials(" A2@A.com ", "111")
     email = @user2.email
     expect(email).to eq("a2@a.com")
   end
-  # it "validation of a few spaces before and/or after their email address" do 
-  #   @user2 = User.new(name:"a2",email:"   a1@a.com   ",password:"111", password_confirmation:"111")
-  #   email = @user2.email
-  #   expect(email).to eq("111")
-  # end
+
 end

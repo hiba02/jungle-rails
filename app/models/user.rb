@@ -6,14 +6,18 @@ class User < ActiveRecord::Base
   validates :password, confirmation: true
   validates :password_confirmation, presence: true
   validates :password, length: { minimum: 3 }
-  # validates :email, presence: true, uniqueness: { case_sensitive: false }
   validates :email, presence: true, uniqueness: true
 
-  extend AutoStripAttributes
-  auto_strip_attributes :email
+
+  # extend AutoStripAttributes
+  # auto_strip_attributes :email
   def self.authenticate_with_credentials(email, password)
-    @user = User.find_by_email('lower(email) = ?', email.downcase)
-    @user.email = @user.email.strip
+    # @user = User.find_by_email('lower(email) = ?', email.downcase)
+    @user = User.where('lower(TRIM(email)) = ?', email.downcase.strip).first
+    if @user
+      @user.email = @user.email.downcase.strip
+    end
+    
     if @user && @user.authenticate(password)
       return @user
     else
