@@ -15,7 +15,7 @@ RSpec.describe Product, type: :model do
   }
 
   # it "is valid with a name" do
-  #   @product = Product.new(name: "Anything", price: 1, quantity: 1, category: Category.new)
+  #   @product = Product.new(:name => "Anything")
   #   product_name = @product.name
   #   expect(product_name).to be_valid
   # end
