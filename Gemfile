@@ -66,7 +66,7 @@ group :test do
   gem 'shoulda-matchers'
 end
 
-gem "auto_strip_attributes", "~> 2.2"
+group :test do
   gem 'capybara'
   gem 'poltergeist'
   gem 'database_cleaner'
