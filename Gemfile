@@ -67,3 +67,7 @@ group :test do
 end
 
 gem "auto_strip_attributes", "~> 2.2"
+  gem 'capybara'
+  gem 'poltergeist'
+  gem 'database_cleaner'
+end
