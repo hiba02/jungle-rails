@@ -18,18 +18,31 @@ RSpec.feature "Visitor navigates to product detail", type: :feature, js: true do
       )
     end
   end
-  scenario "They see all products" do
 
-    visit root_path
-    # puts page.html
-    save_screenshot('product1.png')
-
-
-    expect(page).to have_css('.product', count:10)
+  scenario "users can click the 'Add to Cart' button" do
     
-    # match: :first (sould be symbol)
-    click_link('Details', match: :first)
-    save_screenshot('product2.png')
+    # fill form for login
+    visit '/login'
+    
+    
+    within '.form_class' do
+
+      fill_in 'email', with: 'a1@a'
+      fill_in 'password', with: '111'
+      click_button 'Submit'
+
+    end
+    save_screenshot('cart0.png')
+
+    # go to home page
+    visit root_path
+    save_screenshot('cart1.png')
+
+    
+    # click Add button to increase the cart number
+    click_button('Add', match: :first)
+
+    save_screenshot('cart3.png')
 
 
   end
